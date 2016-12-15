@@ -1,0 +1,77 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="flip-card">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      #container {
+        width: 200px;
+        height: 200px;
+        perspective: 800px; 
+      }
+
+      #card {
+        transition: 1s all ease-in-out;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .front, .back {
+        top:0;
+        left:0;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+      }
+      .front {
+        background-color: blue;
+      }
+      .back {
+        background-color: red;
+        transform: rotateY(180deg);
+      }
+      .flipped {
+        transform: rotateY(180deg);
+      }
+      
+    </style>
+    <div id="container" on-click="Fliptime">
+      <div id="card">
+        <div id="frontface" class="front">
+          Front of card2
+        </div>
+        <div id="backface" class="back">
+          Back of card
+        </div>
+      </div>
+    </div>
+  </template>
+</dom-module>
+
+  <script>
+   
+   class FlipCard extends Polymer.Element {
+     constructor() {
+       super();
+     }
+
+     Fliptime(){
+       this.$.card.classList.toggle('flipped');
+     }
+
+     static get is() {
+       return 'flip-card';
+     }
+
+     connectedCallback() {
+       super.connectedCallback();
+       
+     }
+
+   }
+
+   customElements.define(FlipCard.is, FlipCard);
+
+  </script>
+
