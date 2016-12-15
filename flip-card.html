@@ -59,8 +59,11 @@
        super();
      }
 
-     Fliptime(){
+     Fliptime(){       
        this.$.card.classList.toggle('flipped');
+       setTimeout(() => {
+         this.$.card.classList.toggle('flipped');
+       }, 2000)
      }
 
      static get is() {
