@@ -19,7 +19,9 @@
       }
       .front, .back {
         min-width: 100px;
+        max-width: 200px;
         min-height: 100px;
+        max-height: 200px;
         top:0;
         left:0;
         width: 100%;
@@ -39,15 +41,18 @@
       .flipped {
         transform: rotateY(180deg);
       }
+      .cardNumber {
+        font-size: 24px;
+      }
 
     </style>
     <div id="container" on-click="Fliptime">
       <div id="card">
         <div id="frontface" class="front">
-          Front of card2
+          <span class="cardNumber">1</span>
         </div>
         <div id="backface" class="back">
-          Back of card
+          <slot></slot>
         </div>
       </div>
     </div>
