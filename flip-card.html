@@ -23,6 +23,9 @@
         width: 100%;
         height: 100%;
         position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .front {
         background-color: blue;
@@ -56,8 +59,11 @@
        super();
      }
 
-     Fliptime(){
+     Fliptime(){       
        this.$.card.classList.toggle('flipped');
+       setTimeout(() => {
+         this.$.card.classList.toggle('flipped');
+       }, 2000)
      }
 
      static get is() {
