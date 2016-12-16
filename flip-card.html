@@ -6,6 +6,10 @@
       :host {
         display: block;
       }
+      * {
+        box-sizing: border-box;
+      }
+
       #container {
         width: 100%;
         height: 100%;
@@ -13,30 +17,34 @@
       }
 
       #card {
+         width: 100%;
+        height: 100%;
         transition: 1s all ease-in-out;
         transform-style: preserve-3d;
         position: relative;
       }
+
       .front, .back {
-        min-width: 100px;
-        max-width: 200px;
-        min-height: 100px;
-        max-height: 200px;
-        top:0;
-        left:0;
         width: 100%;
         height: 100%;
-        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
+        backface-visibility: hidden;
       }
-      .front {
+      #frontface {
         background-color: blue;
+        height:100%;
+       
       }
       .back {
         background-color: red;
         transform: rotateY(180deg);
+          top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
       }
       .flipped {
         transform: rotateY(180deg);
@@ -46,14 +54,15 @@
       }
 
     </style>
-    <div id="container" on-click="Fliptime">
-      <div id="card">
-        <div id="frontface" class="front">
-          <span class="cardNumber">1</span>
+    <div id="container" on-click="Fliptime" style="border: 5px solid purple; height: 100%">
+      <div id="card" style="border: 5px solid pink;">
+        <div style="background-color: blue;" id="frontface" class="front">
+          <div style="background-color: blue;" class="cardNumber">Front of the card</span>
         </div>
         <div id="backface" class="back">
-          <slot></slot>
+          <slot style="max-width: 200px;"></slot>
         </div>
+        <div style="clear: both"></div>
       </div>
     </div>
   </template>
