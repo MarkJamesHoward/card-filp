@@ -66,11 +66,23 @@
        super();
      }
 
-     Fliptime(){       
+     flippedChanged(){    
+       console.log('flipped changed');   
        this.$.card.classList.toggle('flipped');
        setTimeout(() => {
          this.$.card.classList.toggle('flipped');
        }, 2000)
+     }
+
+     static get config() {
+       return {
+         properties : {
+           flipBackAfterFlipTime : {type: Boolean},
+           flipped : { type: Boolean,
+           observer: this.flippedChanged},
+           flipTime : {type: Number}
+         }
+       }
      }
 
      static get is() {

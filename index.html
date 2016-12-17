@@ -10,10 +10,20 @@
     <link rel="import" href="flip-card.html" />
   </head>
   <body>
+    <Button onclick="handle()">FLIP</button>
 
-    <flip-card>
-      <img src="./images/rogue.jpg"></img>
+    <flip-card id="flipid" flipped="true">
+      <img style="width:200px;" src="./images/rogue.jpg"></img>
     </flip-card>
-
   </body>
 </html>
+
+<script>
+
+function handle() {
+  console.log('handled');
+  let elem = document.querySelector('#flipid');
+  elem.FlipMe();
+}
+
+</script>
