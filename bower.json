@@ -3,7 +3,7 @@
   "description": "3d flip card",
   "main": "flip-card.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#2.0-preview"
+    "polymer": "Polymer/polymer#2.0.0-rc.2"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
