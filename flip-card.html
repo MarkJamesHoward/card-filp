@@ -69,16 +69,20 @@
 
     </style>
 
-    <button hidden="true" on-click="FlipMe"> Do Flip </button>
+    <button hidden="false" on-click="FlipMe"> Do Flip </button>
     
 
     <div id="container" style="height: 100%">
       <div id="card">
         <div  id="frontface" class="front">
-          <slot style="width:50%;height:50%"></slot>
+          <slot name="front" style="width:50%;height:50%">
+            Front Default
+          </slot>
         </div>
         <div id="backface" class="back">
-          <slot style="width:50%;height:50%"></slot>
+          <slot name="back" style="width:50%;height:50%">
+            Back Default
+          </slot>
         </div>
         <div style="clear: both"></div>
       </div>
