@@ -28,7 +28,10 @@
       }
 
       .front {
-        background-image: url("../images/cardFront.jpg");
+        background-image: url("./images/rogue.jpg");
+        background-size: 80% 80%;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       #card {
@@ -73,7 +76,7 @@
 
     </style>
 
-    <button hidden$="[[demo]]" on-click="FlipMe"> Do Flip </button>
+    <button hidden$="{{demo}}" on-click="FlipMe"> Do Flip </button>
     
 
     <div id="container" style="height: 100%">
@@ -82,7 +85,7 @@
          <img style="width:50%;height:50%" src="./images/cardFront3.png"></img>
         </div>
         <div id="backface" class="back">
-          <slot style="max-width: 200px;"></slot>
+          <slot style="width:50%;height:50%"></slot>
         </div>
         <div style="clear: both"></div>
       </div>
@@ -91,7 +94,7 @@
 
 
   <script>
-    class FlipCard20 extends Polymer.Element {
+    class FlipCard extends Polymer.Element {
      constructor() {
        super();
      }
@@ -140,7 +143,7 @@
 
    }
 
-      window.customElements.define(FlipCard20.is, FlipCard20);
+      window.customElements.define(FlipCard.is, FlipCard);
 
   </script>
 </dom-module>
