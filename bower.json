@@ -1,7 +1,7 @@
 {
-  "name": "flip-card20",
+  "name": "flip-card",
   "description": "3d Flip Card",
-  "main": "flip-card20.html",
+  "main": "flip-card.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0-rc.2"
   },
