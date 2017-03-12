@@ -82,7 +82,7 @@
     <div id="container" style="height: 100%">
       <div id="card">
         <div  id="frontface" class="front">
-         <img style="width:50%;height:50%" src="./images/cardFront3.png"></img>
+         <img style="width:50%;height:50%" src="./images/" {{cardImage}}></img>
         </div>
         <div id="backface" class="back">
           <slot style="width:50%;height:50%"></slot>
@@ -127,7 +127,8 @@
            flipBackAfterFlipTime : {type: Boolean},
            flipped : { type: Boolean},
            flipTime : {type: Number},
-           demo: {type: Boolean}
+           demo: {type: Boolean},
+           cardImage: {type: String}
          }
        }
      }
