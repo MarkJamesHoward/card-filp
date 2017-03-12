@@ -1,6 +1,14 @@
 <link rel="import" href="../polymer/polymer.html">
 
+<!--
+`flip-card`
+3d Flip Card
+
+@demo demo/index.html
+-->
+
 <dom-module id="flip-card">
+ 
   <template>
     <style>
       :host {
@@ -39,8 +47,6 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        width: 100%;
-        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -59,6 +65,9 @@
       }
 
     </style>
+
+    <button on-click="FlipMe"> Do Flip </button>
+
     <div id="container" style="height: 100%">
       <div id="card">
         <div  id="frontface" class="front">
@@ -71,11 +80,10 @@
       </div>
     </div>
   </template>
-</dom-module>
+
 
   <script>
-   
-   class FlipCard extends Polymer.Element {
+    class FlipCard20 extends Polymer.Element {
      constructor() {
        super();
      }
@@ -107,7 +115,8 @@
          properties : {
            flipBackAfterFlipTime : {type: Boolean},
            flipped : { type: Boolean},
-           flipTime : {type: Number}
+           flipTime : {type: Number},
+           demo: {type: Boolean}
          }
        }
      }
@@ -123,7 +132,7 @@
 
    }
 
-   customElements.define(FlipCard.is, FlipCard);
+      window.customElements.define(FlipCard20.is, FlipCard20);
 
   </script>
-
+</dom-module>
