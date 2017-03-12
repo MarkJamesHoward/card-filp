@@ -2,6 +2,7 @@
   "name": "flip-card",
   "description": "3d Flip Card",
   "main": "flip-card.html",
+  "license": "MIT",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0-rc.2"
   },
