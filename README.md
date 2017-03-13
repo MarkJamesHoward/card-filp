@@ -4,6 +4,11 @@
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/owner/my-element)
 
+
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="flip-card.html">
+<flip-card indeterminate></flip-card>
+
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
