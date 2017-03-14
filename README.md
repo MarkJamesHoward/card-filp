@@ -1,4 +1,4 @@
-# \<flip-card20\>
+# \<flip-card\>
 
 3d Flip Card
 
