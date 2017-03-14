@@ -1,5 +1,4 @@
 <link rel="import" href="../polymer/polymer.html">
-
 <!--
 `flip-card`
 3d Flip Card
@@ -70,22 +69,22 @@
 
     </style>
 
-    <button hidden="false" on-click="FlipMe"> Do Flip </button>
-    
+    <template is="dom-if" if="{{demo}}">
+        <button on-click="FlipMe"> Do Flip </button>
+    </template>
 
     <div id="container" style="height: 100%">
       <div id="card">
         <div id="frontface" class="front">
-          <slot style="pointer-events: none" name="front">
+          <slot name="front">
             Front Default
           </slot>
         </div>
         <div id="backface" class="back">
-          <slot style="pointer-events: none" name="back">
+          <slot name="back">
             Back Default
           </slot>
         </div>
-        <div style="clear: both"></div>
       </div>
     </div>
   </template>
@@ -96,6 +95,7 @@
     class FlipCard extends Polymer.Element {
      constructor() {
        super();
+       this.demo = true;
      }
 
     UnFlipMe(unflipafter){    
@@ -126,7 +126,7 @@
            flipBackAfterFlipTime : {type: Boolean},
            flipped : { type: Boolean},
            flipTime : {type: Number},
-           demo: {type: Boolean}
+           demo: Boolean
          }
        }
      }
@@ -140,9 +140,14 @@
        
      }
 
+     ready() {
+       console.log(this.demo);
+     }
+
    }
 
     window.customElements.define(FlipCard.is, FlipCard);
 
   </script>
+
 </dom-module>
