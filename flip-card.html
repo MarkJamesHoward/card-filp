@@ -21,6 +21,7 @@
       button {
         margin-bottom: 20px;
       }
+
       #container {
         width: 100%;
         height: 100%;
@@ -47,8 +48,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-                border-radius: 5px;
-
+        border-radius: 5px;
       }
      
       .front {
@@ -63,6 +63,7 @@
       .flipped {
         transform: rotateY(180deg);
       }
+
       .cardNumber {
         font-size: 24px;
       }
@@ -74,13 +75,13 @@
 
     <div id="container" style="height: 100%">
       <div id="card">
-        <div  id="frontface" class="front">
-          <slot name="front" style="width:50%;height:50%">
+        <div id="frontface" class="front">
+          <slot style="pointer-events: none" name="front">
             Front Default
           </slot>
         </div>
         <div id="backface" class="back">
-          <slot name="back" style="width:50%;height:50%">
+          <slot style="pointer-events: none" name="back">
             Back Default
           </slot>
         </div>
@@ -89,8 +90,9 @@
     </div>
   </template>
 
-
   <script>
+
+
     class FlipCard extends Polymer.Element {
      constructor() {
        super();
@@ -124,8 +126,7 @@
            flipBackAfterFlipTime : {type: Boolean},
            flipped : { type: Boolean},
            flipTime : {type: Number},
-           demo: {type: Boolean},
-           cardImage: {type: String}
+           demo: {type: Boolean}
          }
        }
      }
@@ -141,7 +142,7 @@
 
    }
 
-      window.customElements.define(FlipCard.is, FlipCard);
+    window.customElements.define(FlipCard.is, FlipCard);
 
   </script>
 </dom-module>
