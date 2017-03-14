@@ -1,8 +1,23 @@
-# \<flip-card20\>
+# \<flip-card\>
 
 3d Flip Card
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/owner/my-element)
+
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="flip-card.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<flip-card>...</flip-card>
+```
 
 ## Install the Polymer-CLI
 
